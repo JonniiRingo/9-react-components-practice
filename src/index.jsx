@@ -1,6 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 
+const root = ReactDOM.createRoot(document.getElementById("root"));
 const date = new Date();
 const currentTime = date.getHours();
 
@@ -21,11 +22,12 @@ if (currentTime < 12) {
   customStyle.color = "blue";
 }
 
-ReactDOM.render(
-  <h1 className="heading" style={customStyle}>
-    {greeting}
-  </h1>,
-  document.getElementById("root")
+root.render(
+  <React.StrictMode>
+      <div>
+          <h1 style = {customStyle}>Hello</h1>
+      </div>
+  </React.StrictMode>
 );
 
 // If you're running this locally in VS Code use the commands:
